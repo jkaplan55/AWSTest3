@@ -46,12 +46,6 @@ include(${C74_MIN_API_DIR}/test/min-object-unittest.cmake)
 #############################################################
 
 
-#Set the location of where Windows can find the installed libraries of the SDK.
-if(MSVC)
-    string(REPLACE ";" "/aws-cpp-sdk-all;" SYSTEM_MODULE_PATH "${CMAKE_SYSTEM_PREFIX_PATH}/aws-cpp-sdk-all")
-    list(APPEND CMAKE_PREFIX_PATH ${SYSTEM_MODULE_PATH})
-endif()
-
 
 #Load required services/packages: This basic example uses S3.
 find_package(AWSSDK REQUIRED COMPONENTS s3)
